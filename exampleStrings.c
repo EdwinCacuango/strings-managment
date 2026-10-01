@@ -25,11 +25,17 @@ const char* s2 = "\nHello\nWorld\n";
 
 void gets_example_func(void) {
   char buf[BUFFER_MAX_SIZE];
- 
-  if (fgets(buf, sizeof(buf), stdin) == NULL) {
-        return;
+  char *p;
+
+  if (fgets(buf, sizeof(buf), stdin)) {
+    p = strchr(buf, '\n');
+    if (p) {
+      *p = '\0';
+    }
+  } else {
+    return;
   }
-  buf[strlen(buf) - 1] = '\0';
+  
 }
 
 char *get_dirname(const char *pathname, char *dirname, size_t size) 
