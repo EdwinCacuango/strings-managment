@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
   char array3[16];
   char array4[16];
   char array5 []  = "01234567890123456";
-  char *ptr_char  = "new string literal";
+  char ptr_char [] = "new string literal";
   // int size_array1 = strlen("аналитик");
   // int size_array2 = 100;
   
