@@ -1,3 +1,6 @@
+#Directorios
+/ejecutables
+
 # ===== Objetos y binarios compilados =====
 *.o
 *.obj
