@@ -1,0 +1,85 @@
+# ===== Objetos y binarios compilados =====
+*.o
+*.obj
+*.ko
+*.elf
+*.out
+*.exe
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# ===== Librerías =====
+*.a
+*.lib
+*.la
+*.lo
+*.so
+*.so.*
+*.dylib
+*.dll
+
+# ===== Archivos intermedios / depuración =====
+*.d
+*.gch
+*.pch
+*.ilk
+*.map
+*.exp
+*.pdb
+*.idb
+*.su
+*.dwo
+*.dSYM/
+
+# ===== Directorios de build =====
+build/
+Build/
+bin/
+obj/
+out/
+cmake-build-*/
+
+# ===== CMake =====
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+CMakeUserPresets.json
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+
+# ===== Autotools =====
+autom4te.cache/
+config.log
+config.status
+config.h
+stamp-h1
+.deps/
+.libs/
+
+# ===== Cobertura y profiling =====
+*.gcno
+*.gcda
+*.gcov
+gmon.out
+callgrind.out.*
+vgcore.*
+core
+core.*
+
+# ===== Editores / IDEs =====
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.cache/
+.clangd/
+
+# ===== Sistema operativo =====
+.DS_Store
+Thumbs.db
