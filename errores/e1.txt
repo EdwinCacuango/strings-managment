@@ -1,0 +1,28 @@
+exampleStrings.c:22:19: warning: missing terminating '"' character [-Winvalid-pp-token]
+   22 | const char* s1 = R"foo(
+      |                   ^
+exampleStrings.c:22:18: error: use of undeclared identifier 'R'
+   22 | const char* s1 = R"foo(
+      |                  ^
+exampleStrings.c:25:5: warning: missing terminating '"' character [-Winvalid-pp-token]
+   25 | )foo";
+      |     ^
+exampleStrings.c:32:9: error: void function 'gets_example_func' should not return a value [-Wreturn-mismatch]
+   32 |         return 1;
+      |         ^      ~
+exampleStrings.c:51:2: warning: 'gets' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of gets(3), it is highly recommended that you use fgets(3) instead. [-Wdeprecated-declarations]
+   51 |         gets(response);
+      |         ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h:260:1: note: 'gets' has been explicitly marked deprecated here
+  260 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of gets(3), it is highly recommended that you use fgets(3) instead.")
+      | ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:227:48: note: expanded from macro '__deprecated_msg'
+  227 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+exampleStrings.c:94:11: error: use of undeclared identifier 's2'
+   94 |     puts (s2);
+      |           ^~
+exampleStrings.c:60:14: warning: unused parameter 'argc' [-Wunused-parameter]
+   60 | int main(int argc, char *argv[])
+      |              ^
+4 warnings and 3 errors generated.

@@ -19,10 +19,7 @@ char array2[] = { 'F', 'o', 'o', 'b', 'a', 'r', '\0' };
  
 enum { BUFFER_MAX_SIZE = 1024 };
  
-const char* s1 = R"foo(
-Hello
-World
-)foo";
+const char* s1 ="\nHello\nWorld\n";
 const char* s2 = "\nHello\nWorld\n";
 
 void gets_example_func(void) {
