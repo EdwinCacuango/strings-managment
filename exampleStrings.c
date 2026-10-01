@@ -62,12 +62,12 @@ int main(int argc, char *argv[])
     char array4[16];
     char array5 []  = "01234567890123456";
     char *ptr_char  = "new string literal";
-    int size_array1 = strlen("аналитик");
-    int size_array2 = 100;
+    // int size_array1 = strlen("аналитик");
+    // int size_array2 = 100;
     
    // char analitic1[size_array1]="аналитик";
    // char analitic2[size_array2]="аналитик";
-    char analitic3[100]="аналитик";
+   // char analitic3[100]="аналитик";
 
     puts(get_dirname(__FILE__));
 
