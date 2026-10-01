@@ -1,0 +1,4 @@
+exampleStrings.c:57:14: warning: unused parameter 'argc' [-Wunused-parameter]
+   57 | int main(int argc, char *argv[])
+      |              ^
+1 warning generated.
