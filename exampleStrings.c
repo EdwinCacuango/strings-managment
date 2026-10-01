@@ -26,7 +26,7 @@ void gets_example_func(void) {
   char buf[BUFFER_MAX_SIZE];
  
   if (fgets(buf, sizeof(buf), stdin) == NULL) {
-        return 1;
+        return;
   }
   buf[strlen(buf) - 1] = '\0';
 }
