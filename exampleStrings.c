@@ -13,6 +13,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stddef.h>
  
 char array1[] = "Foo" "bar";
 char array2[] = { 'F', 'o', 'o', 'b', 'a', 'r', '\0' };
@@ -31,13 +32,19 @@ void gets_example_func(void) {
   buf[strlen(buf) - 1] = '\0';
 }
 
-const char *get_dirname(const char *pathname) {
-  char *slash;
+char *get_dirname(const char *pathname, char *dirname, size_t size) 
+{
+  const char *slash;
   slash = strrchr(pathname, '/');
   if (slash) {
-    *slash = '\0'; /* Undefined behavior */
+    ptrdiff_t slash_idx = slash - pathname;
+    if((size_t)slash_idx < size) {
+      memcpy(dirname, pathname, slash_idx); 
+      dirname[slash_idx] = '\0'; 
+      return dirname;
+    }
   }
-  return pathname;
+  return 0;
 }
  
 
@@ -62,7 +69,7 @@ int main(int argc, char *argv[])
 	  printf("Uso correcto: %s <argumento1> <argumento2>\n", argv[0]);
 	  return 1;
   }
-  
+
   char key[24];
   char response[8];
   char array3[16];
@@ -76,8 +83,10 @@ int main(int argc, char *argv[])
   // char analitic2[size_array2]="аналитик";
   // char analitic3[100]="аналитик";
 
-  puts(get_dirname(__FILE__));
-
+  char dirname[260];
+  if (get_dirname(__FILE__, dirname, sizeof(dirname))) { 
+    puts(dirname); 
+  }
       
   strcpy(key, argv[1]);  
   strcat(key, " = ");  
