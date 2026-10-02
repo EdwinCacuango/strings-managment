@@ -124,8 +124,5 @@ int main(int argc, char *argv[])
   array5 [0] = 'M';
   ptr_char [0] = 'N';
   
-  array3[sizeof(array3)-1]='\0';
-  
-  
   return 0;
 }
