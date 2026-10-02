@@ -59,7 +59,11 @@ void get_y_or_n(void) {
 	char response[8];
 
 	printf("Continue? [y] n: ");  
-	fgets(response, sizeof(response), stdin);
+
+	if (fgets(response, sizeof(response), stdin) == NULL) {
+    exit(EXIT_FAILURE);
+  }
+
 
 	if (response[0] == 'n') 
 		exit(0);  
@@ -105,7 +109,9 @@ int main(int argc, char *argv[])
   }
 
 
-  fgets(response,sizeof(response),stdin);
+  if(fgets(response,sizeof(response),stdin) == NULL){
+    return EXIT_FAILURE;
+  }
   
   get_y_or_n();
 
