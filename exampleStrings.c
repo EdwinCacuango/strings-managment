@@ -10,7 +10,6 @@
  * At the end the source code  should compile without warnings to the variant selected (you can remove/change instructions).
  */
 
-#define __STDC_WANT_LIB_EXT1__1 
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -102,7 +101,7 @@ int main(int argc, char *argv[])
   char *key = (char *)malloc(key_len);
 
   if (key != NULL) { 
-    snprintf(key, key_len, "%s = %s", argv[1], argv[1]);
+    snprintf(key, key_len, "%s = %s", argv[1], argv[2]);
     free(key); 
   } else { 
     return EXIT_FAILURE;
@@ -130,7 +129,7 @@ int main(int argc, char *argv[])
   array3[sizeof(array3) -1]  = '\0';
 
   // copia a array 4
-  strncpy(array4, array3, strlen(array4) -1);
+  strncpy(array4, array3, sizeof(array4) -1);
   array4[sizeof(array4) -1] = '\0'; 
   
   array5 [0] = 'M';
