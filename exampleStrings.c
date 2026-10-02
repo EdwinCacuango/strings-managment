@@ -113,8 +113,13 @@ int main(int argc, char *argv[])
   puts (s2);
   printf ("\n");
   
-  strncpy(array3, array5, sizeof(array3));  
-  strncpy(array4, array3, strlen(array3));
+  // truncamiento forzoso
+  strncpy(array3, array5, sizeof(array3) -1); 
+  array3[sizeof(array3) -1]  = '\0';
+
+  // copia a array 4
+  strncpy(array4, array3, strlen(array4) -1);
+  array4[sizeof(array4) -1] = '\0'; 
   
   array5 [0] = 'M';
   ptr_char [0] = 'N';
