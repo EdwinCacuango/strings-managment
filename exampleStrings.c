@@ -10,6 +10,7 @@
  * At the end the source code  should compile without warnings to the variant selected (you can remove/change instructions).
  */
 
+#define __STDC_WANT_LIB_EXT1__1 
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -73,10 +74,9 @@ int main(int argc, char *argv[])
   {
 	  printf("Error: Faltan argumentos.\n");
 	  printf("Uso correcto: %s <argumento1> <argumento2>\n", argv[0]);
-	  return 1;
+	  return EXIT_FAILURE;
   }
 
-  char key[24];
   char response[8];
   char array3[16];
   char array4[16];
@@ -93,10 +93,16 @@ int main(int argc, char *argv[])
   if (get_dirname(__FILE__, dirname, sizeof(dirname))) { 
     puts(dirname); 
   }
-      
-  strcpy(key, argv[1]);  
-  strcat(key, " = ");  
-  strcat(key, argv[2]);
+  
+  size_t key_len = strlen(argv[1]) + strlen(" = ") + strlen(argv[2]) + 1;
+  char *key = (char *)malloc(key_len);
+
+  if (key != NULL) { 
+    snprintf(key, key_len, "%s = %s", argv[1], argv[1]);
+    free(key); 
+  } else { 
+    return EXIT_FAILURE;
+  }
 
 
   fgets(response,sizeof(response),stdin);
